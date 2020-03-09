@@ -3,6 +3,8 @@
 #### Built with Python 3.7, RabbitMQ 3.6, and Pika 1.1
 #### One program generates a home power consumption value, and the other receives it, gets a Photovoltaic power value based on the hour, and outputs the sum. All of this is printed to the consoles. These values are written to a .csv file with a timestamp.
 
+![Screenshot of Application at Work](/app_screenshot.png "A look at the application at work")
+
 ##### 1. Ensure that the following are installed on your computer:
 1. python 3.7 (type "python --version" in the terminal)
 2. rabbitmq 3.6.10 (type "sudo rabbitmqctl status" in the terminal, followed by your password)
