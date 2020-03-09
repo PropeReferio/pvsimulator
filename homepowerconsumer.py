@@ -55,8 +55,7 @@ def log_values(meter):
 connection = pika.BlockingConnection(pika.ConnectionParameters('localhost'))
 channel = connection.channel()
 
-channel.queue_declare(queue='homepower', durable=True) #durable means that 
-#even if the server goes down, messages aren't lost.
+channel.queue_declare(queue='homepower', durable=True)
 
 def callback(ch, method, properties, body):
     print("\n [x] Received message: %r watts." % float(body))
