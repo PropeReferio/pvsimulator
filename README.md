@@ -4,9 +4,9 @@
 #### One program generates a home power consumption value, and the other receives it, gets a Photovoltaic power value based on the hour, and outputs the sum. All of this is printed to the consoles. These values are written to a .csv file with a timestamp.
 
 #####1. Ensure that the following are installed on your computer:
-	python 3.7 (type "python --version" in the terminal)
-	rabbitmq 3.6.10 (type "sudo rabbitmqctl status" in the terminal, followed by your password)
-	pika 1.1.0 (Type "sudo pip install pika" in the terminal)
+1. python 3.7 (type "python --version" in the terminal)
+2. rabbitmq 3.6.10 (type "sudo rabbitmqctl status" in the terminal, followed by your password)
+3. pika 1.1.0 (Type "sudo pip install pika" in the terminal)
 
 #####2. Open two terminals, go to the directory containing homepowerproducer.py and homepowerconsumer.py.
 
