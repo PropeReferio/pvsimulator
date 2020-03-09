@@ -1,5 +1,5 @@
 1. Ensure that the following are installed on your computer:
-	python 3.8 (type "python --version" in the terminal)
+	python 3.7 (type "python --version" in the terminal)
 	rabbitmq 3.6.10 (type "sudo rabbitmqctl status" in the terminal, followed by your password)
 	pika 1.1.0 (Type "sudo pip install pika" in the terminal)
 
