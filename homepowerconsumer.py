@@ -59,7 +59,7 @@ channel.queue_declare(queue='homepower', durable=True) #durable means that
 #even if the server goes down, messages aren't lost.
 
 def callback(ch, method, properties, body):
-    print(" [x] Received message: %r watts." % float(body))
+    print("\n [x] Received message: %r watts." % float(body))
     ch.basic_ack(delivery_tag = method.delivery_tag) #This is to make sure 
     #messages aren't lost if a consumer is killed
     log_values(float(body))
