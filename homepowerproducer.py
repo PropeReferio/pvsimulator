@@ -10,7 +10,7 @@ channel.queue_declare(queue='homepower', durable=True) #Name of queue
 
 active=True
 while active: #Messages will send every 2 seconds until the process is killed.
-    message = str(round(random.uniform(0,9001), 1))
+    message = str(round(random.uniform(0,9001), 1))#Body accepts string
     channel.basic_publish(exchange='',
                         routing_key='homepower', #Name of queue goes here
                         body=message,

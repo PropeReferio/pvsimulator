@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import pika
 import time
 import random
@@ -36,14 +37,13 @@ powertime = { #The keys are hours, the values are the kW values provided for
 def log_values(meter):
     pv = powertime[time.localtime()[3]] #Uses the current hour as a key
         #to get a kW value
-    fieldnames = ['Timestamp', 'Meter (W)', 'PV (kW)', 'Sum (W)']
     if os.path.isfile('wattage.csv'): #appends to file if it exists already
         with open('wattage.csv', mode='a') as watt_file:
-            writer = csv.DictWriter(watt_file, fieldnames=fieldnames)
-            writer.writerow({'Timestamp': time.asctime(), 'Meter (W)': meter, 
-            'PV (kW)': pv, 'Sum (W)': meter + pv * 1000})
+            writer = csv.writer(watt_file, delimiter=',')
+            writer.writerow([time.asctime(), meter, pv, meter + pv *1000])
     else: #Creates the file with headers if it doesn't exist yet
         with open('wattage.csv', mode='w') as watt_file:
+            fieldnames = ['Timestamp', 'Meter (W)', 'PV (kW)', 'Sum (W)']
             writer = csv.DictWriter(watt_file, fieldnames=fieldnames)
             writer.writeheader()
     
